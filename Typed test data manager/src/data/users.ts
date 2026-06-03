@@ -6,3 +6,9 @@ const user_A = {"id":"1","name":"viru","email":"test.viru@gmail.com","role":"use
 const user_B = {"id":"2","name":"sean","email":"test.sean@gmail.com","role":"admin","active":true};
 
 const user_C = {"id":"1","name":"max","email":"test.max@gmail.com","role":"guest","active":false};
+
+
+const users_list = [
+{"id":"1","name":"viru","email":"test.viru@gmail.com","role":"user","active":true},
+{"id":"1","name":"max","email":"test.max@gmail.com","role":"guest","active":false}
+];
