@@ -1,28 +1,55 @@
 // contains functions that work with users
 
 
-function addUser() {
-    // add user
+function addUser(emailId: string, name: string, role: string) {
+    if (!getUserByEmail(emailId)) {
+        const current_length = users_list.length;
+        const user_details = {
+            name: name,
+            email: emailId,
+            role: role,
+            id: current_length + 1,
+            active: true
+        };
+        users_list.push(user_details);
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
 
 function getUserByEmail(emailInput: string) {
-    // let searchFound = false;
-    let userDetails: { name?: string; id?: string; role?:string; active?:boolean } = {};
-    if (users_list.length > 0) {
-        for (let i = 0; i < users_list.length; i++) {
-            if (users_list[i].email == emailInput) {
-                console.log("Found the email in the Users list");
-                // searchFound = true;
-                userDetails.name = users_list[i].name;
-                userDetails.role = users_list[i].role;
-                userDetails.active = users_list[i].active;
-                userDetails.id = users_list[i].id;
-            }
+    for (let i = 0; i < users_list.length; i++) {
+        if (users_list[i].email === emailInput) {
+            return users_list[i];
         }
     }
-    return userDetails;
+    return undefined;
+}
+
+function getActiveUsers(){
+    let active_users = [];
+    for (let i=0;i<users_list.length;i++){
+        if(users_list[i].active){
+            active_users.push(users_list[i]);
+        }
+    }
+    return active_users;
+}
+
+
+function updateUser(email: string, role:string, name:string){
+    let userFound = false;
+    for(let i=0;i<users_list.length;i++){
+        if (users_list[i].email === email){
+            users_list[i].name = name;
+            users_list[i].role = role;
+            userFound = true;
+        }
+    }
+    return userFound;
 }
 
 function disaplyUsers() {

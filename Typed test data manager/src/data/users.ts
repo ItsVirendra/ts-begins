@@ -7,6 +7,6 @@
 
 
 let users_list = [
-{"id":"0000100","name":"viru","email":"test.viru@gmail.com","role":"user","active":true},
-{"id":"0000101","name":"max","email":"test.max@gmail.com","role":"guest","active":false}
+{"id":1,"name":"viru","email":"test.viru@gmail.com","role":"user","active":true},
+{"id":2,"name":"max","email":"test.max@gmail.com","role":"guest","active":false}
 ];
