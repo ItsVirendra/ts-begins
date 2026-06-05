@@ -1,10 +1,10 @@
 // contains functions that work with users
 
 
-function addUser(emailId: string, name: string, role: string) {
+function addUser(emailId: string, name: string, role: string): boolean {
     if (!getUserByEmail(emailId)) {
-        const current_length = users_list.length;
-        const user_details = {
+        const current_length: number = users_list.length;
+        const user_details: User = {
             name: name,
             email: emailId,
             role: role,
@@ -16,12 +16,11 @@ function addUser(emailId: string, name: string, role: string) {
     } else {
         return false;
     }
-
 }
 
 
-function getUserByEmail(emailInput: string) {
-    for (let i = 0; i < users_list.length; i++) {
+function getUserByEmail(emailInput: string): User | undefined {
+    for (let i: number = 0; i < users_list.length; i++) {
         if (users_list[i].email === emailInput) {
             return users_list[i];
         }
@@ -29,10 +28,10 @@ function getUserByEmail(emailInput: string) {
     return undefined;
 }
 
-function getActiveUsers(){
-    let active_users = [];
-    for (let i=0;i<users_list.length;i++){
-        if(users_list[i].active){
+function getActiveUsers(): User[] {
+    let active_users: User[] = [];
+    for (let i = 0; i < users_list.length; i++) {
+        if (users_list[i].active) {
             active_users.push(users_list[i]);
         }
     }
@@ -40,20 +39,24 @@ function getActiveUsers(){
 }
 
 
-function updateUser(email: string, role:string, name:string){
-    let userFound = false;
-    for(let i=0;i<users_list.length;i++){
-        if (users_list[i].email === email){
+function updateUser(email: string, role: string, name: string): boolean {
+    for (let i: number = 0; i < users_list.length; i++) {
+        if (users_list[i].email === email) {
             users_list[i].name = name;
             users_list[i].role = role;
-            userFound = true;
+            return true;
         }
     }
-    return userFound;
+    return false;
 }
 
-function disaplyUsers() {
-    // this is total user count
-    console.log(users_list.length);
-    // display users one by one
+
+function removeUser(email: string): boolean {
+    for (let i: number = 0; i < users_list.length; i++) {
+        if (users_list[i].email === email) {
+            users_list.splice(i, 1);
+            return true;
+        }
+    }
+    return false;
 }
