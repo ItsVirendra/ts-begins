@@ -1,5 +1,8 @@
 // contains functions that work with users
 
+import {users_list} from "../data/users.ts";
+import {User} from "../types/user.types.ts";
+
 
 function addUser(emailId: string, name: string, role: string): boolean {
     if (!getUserByEmail(emailId)) {

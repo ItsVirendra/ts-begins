@@ -1,7 +1,7 @@
 // describe what a user looks like
 
 
-interface User{
+export interface User{
     id:number;
     name: string;
     email:string;
