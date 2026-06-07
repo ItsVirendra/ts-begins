@@ -1,10 +1,10 @@
 // contains functions that work with users
 
-import {users_list} from "../data/users.ts";
-import {User} from "../types/user.types.ts";
+import { users_list } from "../data/users.js";
+import type { User } from "../types/user.types.js";
 
 
-function addUser(emailId: string, name: string, role: string): boolean {
+export function addUser(emailId: string, name: string, role: string): boolean {
     if (!getUserByEmail(emailId)) {
         const current_length: number = users_list.length;
         const user_details: User = {
@@ -22,31 +22,34 @@ function addUser(emailId: string, name: string, role: string): boolean {
 }
 
 
-function getUserByEmail(emailInput: string): User | undefined {
+export function getUserByEmail(emailInput: string): User | undefined {
     for (let i: number = 0; i < users_list.length; i++) {
-        if (users_list[i].email === emailInput) {
-            return users_list[i];
+        const user = users_list[i];
+        if (user && user.email === emailInput) {
+            return user;
         }
     }
     return undefined;
 }
 
-function getActiveUsers(): User[] {
+export function getActiveUsers(): User[] {
     let active_users: User[] = [];
     for (let i = 0; i < users_list.length; i++) {
-        if (users_list[i].active) {
-            active_users.push(users_list[i]);
+        const user = users_list[i];
+        if (user && user.active) {
+            active_users.push(user);
         }
     }
     return active_users;
 }
 
 
-function updateUser(email: string, role: string, name: string): boolean {
+export function updateUser(email: string, role: string, name: string): boolean {
     for (let i: number = 0; i < users_list.length; i++) {
-        if (users_list[i].email === email) {
-            users_list[i].name = name;
-            users_list[i].role = role;
+        const user = users_list[i];
+        if (user && user.email === email) {
+            user.name = name;
+            user.role = role;
             return true;
         }
     }
@@ -54,10 +57,22 @@ function updateUser(email: string, role: string, name: string): boolean {
 }
 
 
-function removeUser(email: string): boolean {
+export function removeUser(email: string): boolean {
     for (let i: number = 0; i < users_list.length; i++) {
-        if (users_list[i].email === email) {
+        const user = users_list[i];
+        if (user && user.email === email) {
             users_list.splice(i, 1);
+            return true;
+        }
+    }
+    return false;
+}
+
+export function disableUser(email: string): boolean {
+    for (let i = 0; i > users_list.length; i++) {
+        const user = users_list[i];
+        if (user && user.email === email) {
+            user.active = false;
             return true;
         }
     }

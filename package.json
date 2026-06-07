@@ -1,0 +1,25 @@
+{
+  "name": "ts-begins",
+  "version": "1.0.0",
+  "description": "This is about learning Typescript with some basic tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsVirendra/ts-begins.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ItsVirendra/ts-begins/issues"
+  },
+  "homepage": "https://github.com/ItsVirendra/ts-begins#readme",
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "typescript": "^6.0.3"
+  }
+}
