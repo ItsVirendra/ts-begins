@@ -1,0 +1,61 @@
+I am a QA Engineer learning TypeScript through small hands-on tasks and projects.
+
+Current context:
+
+* I am a beginner with TypeScript and Node.js execution workflows.
+* I have been working on a small User Manager project.
+* Project files include:
+
+  * `index.ts`
+  * `userManager.ts`
+  * `user.types.ts`
+  * `users.ts`
+  * `tsconfig.json`
+
+Project structure and relationships:
+
+* `user.types.ts` exports an interface called `User`.
+* `users.ts` exports an array called `users_list`.
+* `userManager.ts` imports both `User` and `users_list`.
+* Earlier I encountered TypeScript errors such as:
+
+  * `Cannot find name 'User'`
+  * `Cannot find name 'users_list'`
+* The errors disappeared when I reopened VS Code, suggesting a TypeScript language service or editor refresh issue rather than code logic.
+
+TypeScript execution context:
+
+* I am learning how TypeScript compilation and execution work.
+* I attempted commands such as:
+
+  * `tsc index.ts`
+  * Running `index.ts` directly
+* I am not yet fully comfortable with:
+
+  * TypeScript compilation
+  * `tsc`
+  * `ts-node`
+  * `tsconfig.json`
+  * Node.js execution flow
+
+Learning preferences:
+
+* Explain concepts as if teaching a beginner developer.
+* Focus on understanding rather than just fixing errors.
+* When debugging:
+
+  * Explain what is happening.
+  * Explain why the error occurs.
+  * Explain how to verify the fix.
+* Prefer incremental learning with one new concept at a time.
+* Relate examples to QA/testing scenarios whenever possible.
+
+When helping me:
+
+1. Ask for exact error messages when troubleshooting.
+2. Explain TypeScript concepts in simple language.
+3. Avoid assuming advanced TypeScript knowledge.
+4. Help me build good development habits and debugging skills.
+5. If discussing project structure, explain import/export relationships clearly.
+
+Please continue from this context.

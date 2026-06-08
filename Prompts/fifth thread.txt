@@ -1,0 +1,147 @@
+Act as my strict TypeScript mentor.
+
+Current context:
+
+I am a QA Automation Engineer learning TypeScript fundamentals through small practical projects related to automation tooling.
+
+Project completed (or nearly completed):
+In-Memory User Manager
+
+Original task requirements:
+
+* Create a User type/interface
+* Store users in an array
+* Start with at least 3 sample users
+* Implement:
+
+  * addUser()
+  * getUserByEmail()
+  * getActiveUsers()
+  * deactivateUser()
+* Prevent duplicate emails
+* Return User | undefined when appropriate
+* Print meaningful console output
+
+My implementation evolved into a multi-file project:
+
+src/
+├─ data/
+│  └─ users.ts
+├─ services/
+│  └─ userManager.ts
+├─ types/
+│  └─ user.types.ts
+└─ index.ts
+
+TypeScript concepts already practiced:
+
+* interfaces
+* typed objects
+* User[]
+* User | undefined
+* function return types
+* import/export
+* multi-file organization
+* loops
+* array operations (push, splice)
+* basic CRUD logic
+
+Key learning outcomes:
+
+1. Learned how to organize TypeScript code into:
+
+   * types
+   * data
+   * services
+   * entry point
+
+2. Learned that:
+
+   * TypeScript interfaces exist only at compile time.
+   * Runtime JavaScript cannot import interfaces as values.
+   * Type-only imports should use:
+
+     import type { User } from "...";
+
+3. Learned that:
+
+   * Writing TypeScript code and running TypeScript code are different skills.
+   * Project configuration can fail even when application logic is correct.
+
+4. Learned the standard TypeScript workflow:
+
+   TypeScript (.ts)
+   ↓
+   tsc
+   ↓
+   JavaScript (.js)
+   ↓
+   node
+
+5. Learned basic TypeScript project setup:
+
+   npm init -y
+   npm install -D typescript
+   npx tsc --init
+
+6. Encountered and fixed module configuration issues:
+
+   * CommonJS vs ESM
+   * package.json
+   * tsconfig.json
+   * "type": "module"
+
+7. Successfully got:
+
+   npx tsc
+
+   compiling without errors.
+
+Mentoring preference:
+
+I want reviews in this order:
+
+1. Task requirements completion
+2. Logic correctness
+3. Structure
+4. TypeScript usage
+5. One highest-value improvement
+
+Important:
+
+* Do not immediately redesign the entire project.
+* Separate feedback into:
+
+  * Required fixes
+  * Optional improvements
+  * Advanced discussion
+
+Learning preference:
+
+* One new concept at a time.
+* Small projects (45–60 minutes).
+* Practical coding.
+* Avoid theory-heavy explanations.
+* Avoid enterprise architecture discussions unless directly relevant.
+* Focus on consistent implementation.
+
+Important observation from previous discussions:
+
+I realized that spending several threads perfecting one beginner project can create the false impression that I know nothing.
+
+For future tasks:
+
+* Help me distinguish between:
+
+  * Task completion requirements
+  * Optional improvements
+  * Advanced engineering discussions
+
+If a task satisfies its stated requirements, clearly state:
+
+"Task Complete"
+
+before discussing optional improvements.
+
+Current goal:
+Create the next TypeScript exercise that builds naturally on the User Manager project and introduces only 1–2 new concepts useful for Playwright/QA automation work.
